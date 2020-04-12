@@ -33,6 +33,14 @@
 	All ARDrone3-only commands
 	<class name="Piloting" id="0">
 		All commands related to piloting the drone
+		<cmd name="FlatTrim" id="0">
+                        <comment
+                                title="Do a flat trim"
+                                desc="Do a flat trim of the accelerometer/gyro.\n
+                                Could be useful when the drone is sliding in hover mode."
+                                support="0901;090c;090e;0914;0919"
+                                result="Accelerometer and gyroscope are calibrated then event [FlatTrimChanged](#1-4-0) is triggered."/>
+                </cmd>
 		<cmd name="TakeOff" id="1">
 			<comment
 				title="Take off"
@@ -803,6 +811,13 @@
 	</class>
 	<class name="PilotingState" id="4">
 		State from drone
+		<cmd name="FlatTrimChanged" id="0">
+                        <comment
+                                title="Flat trim changed"
+                                desc="Drone acknowledges that flat trim was correctly processed."
+                                support="0901;090c;090e;0914;0919"
+                                triggered="by [FlatTrim](#1-0-0)."/>
+                </cmd>
 		<cmd name="FlyingStateChanged" id="1">
 			<comment
 				title="Flying state"
